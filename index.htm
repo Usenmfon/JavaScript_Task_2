@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>TrialVersion</title>
+</head>
+
+<body>
+    <script>
+        /*An array of objects to hold 
+                                principal and time*/
+        let data = [{
+                principal: 2500,
+                time: 1.8
+            }, {
+                principal: 1000,
+                time: 5
+            }, {
+                principal: 3000,
+                time: 1
+            }, {
+                principal: 2000,
+                time: 3
+            }]
+            //Test the first ouput
+            //console.log(data)
+
+
+
+        /*A function holding the new array of
+        objects, including iterations and
+        conditionals*/
+        function interestCalculator(data) {
+            let interestData = [{
+                    principal: 2500,
+                    time: 1.8,
+                    interest: data.interest,
+                    rate: data.rate
+                }, {
+                    principal: 1000,
+                    time: 5,
+                    interest: data.interest,
+                    rate: data.rate
+                }, {
+                    principal: 3000,
+                    time: 1,
+                    interest: data.interest,
+                    rate: data.rate
+                }, {
+                    principal: 2000,
+                    time: 3,
+                    interest: data.interest,
+                    rate: data.rate
+                }]
+                //The all loops through the array
+            for (let all of data) {
+
+                if (all.principal >= 2500 && ((all.time > 1) && all.time < 3)) {
+                    //First Test
+                    rate = 3;
+                    interest = {
+                        interest: (all.principal * all.time * rate) / 100
+                    }
+
+
+                    //Second test
+                } else if (all.principal >= 2500 && all.time >= 3) {
+                    rate = 4;
+                    interest = {
+                            interest: (all.principal * all.time * rate) / 100
+                        }
+                        //Third test
+                } else if (all.principal < 2500 || all.time >= 1) {
+                    rate = 2;
+                    interest = {
+                            interest: (all.principal * all.time * rate) / 100
+                        }
+                        //Last test
+                } else {
+                    rate = 1;
+                    interest = {
+                        interest: (all.principal * all.time * rate) / 100
+                    }
+
+
+                }
+                //Inserting all data into interestData
+                interestData.push(interest)
+                console.log(interestData)
+
+                return 'Yay it worked'
+            }
+
+
+        }
+
+        interestCalculator(data)
+    </script>
+</body>
+
+</html>
